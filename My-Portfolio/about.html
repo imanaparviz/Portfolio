@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="img/logo.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+    <title>Iman Aparviz</title>
+    <style>
+      body {width: 100VW;
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        background-color: #f4f4f4;
+      }
+
+      .header{
+        background-color: #9ca7b300;
+        color: black;
+        text-align: center;
+        padding: 0.1em 0;
+      }
+      .footer {
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 0.1em 0;
+      }
+
+      main {
+        padding: 15px;
+        /* Fügt Padding zu allen Seiten des Hauptinhalts hinzu */
+      }
+
+      .intro-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        max-width: 1000px;
+        margin: auto;
+        font-weight: bold;
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 0;
+        max-width: 1000px;
+        /* Begrenzt die Breite des Grids */
+        margin: auto;
+      }
+
+      .profile-image {
+        border-radius: 50%;
+
+        border: 3px solid #b2bcc6;
+        max-width: 200px;
+      }
+
+      .portfolio-item {
+        padding: 20px;
+        background: rgba(84, 57, 57, 0.35);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9.3px);
+        -webkit-backdrop-filter: blur(9.3px);
+        border: 1px solid rgba(84, 57, 57, 0);
+        transition: transform 0.3s ease;
+      }
+
+      input,
+      textarea,
+      button {
+        transition: box-shadow 0.3s ease;
+      }
+
+      input:focus,
+      textarea:focus,
+      button:hover {
+        box-shadow: 0 0 8px #9ca7b3;
+      }
+      .contact-and-spline-container {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        padding: 20px;
+        gap: 20px;
+      }
+      .contact-section {
+        flex-basis: 50%;
+
+        text-align: center;
+      }
+      
+      #bg-wrap {
+        right: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width:100vw;
+        height: 100%;
+        z-index: -1;
+      }
+      .sidebar {
+  position: fixed;
+  right: -1%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 6px rgba(43, 42, 42, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+  width: 50px;
+  z-index: 10;
+}
+@media screen and (max-width: 768px) {
+  .sidebar {
+     right: 0;
+  }
+}
+.sidebar .icon {
+  display: block;
+  text-align: center;
+  margin: 10px 0;
+  color: #333;
+  transition: transform 0.3s, color 0.3s;
+}
+.sidebar .icon:hover {
+  transform: scale(1.2);
+    color: #0077B5;
+}
+ body,
+      html {
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .contact-container {
+        max-width: 50%;
+        margin-left: 35%;
+        padding: 20px;
+        background: rgba(84, 57, 57, 0.35);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9.3px);
+        -webkit-backdrop-filter: blur(9.3px);
+        border: 1px solid rgba(84, 57, 57, 0.25);
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        
+      }
+
+      .contact-form button {
+        width: calc(100% - 20px);
+        padding: 10px;
+        background-color: #9ca7b3;
+        color: rgb(5, 43, 86);
+        border: none;
+        box-sizing: border-box;
+        transition: background-color 0.3s;
+      }
+      .contact-section,
+      .spline-container {
+        flex-basis: 100%;}
+
+      .spline-container {
+        margin-right: -15%;
+        height: 600px;  }
+      .contact-form button:hover {
+        background-color: #34495e;
+      }
+       .portfolio-item:hover {
+        transform: scale(1.05);}
+
+      .portfolio-section,
+      .contact-section,
+      .blog-section {
+        padding: 2em;
+        text-align: center;
+      }
+
+      .portfolio-filter {
+        margin-bottom: 20px;
+      }
+      .navbar {
+  background-color: #2c3e50;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20%;
+  bottom: 0;
+}
+.navbar-logo img {
+    height: 50%;
+    width: 50%;
+}
+
+.navbar-nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav li {
+    margin-left: 20px;
+}
+
+.navbar-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.navbar-toggle {
+    display: none;
+    cursor: pointer;
+}
+.navbar-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  margin: 4px 0;
+}
+@media (max-width: 768px) {
+    .navbar {
+    padding: 15px 20px;
+   
+  }
+    
+    .navbar-nav ul {
+        display: none;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+}
+
+      .portfolio-filter button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        background-color: #9ca7b3;
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .portfolio-filter button:hover {
+        background-color: #9ca7b3;
+        transform: scale(1.05);
+      }
+      @media (max-width: 768px) {
+        .intro-section {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .profile-image {
+          margin-bottom: 1em;
+        }
+
+        .timeline-event {
+          margin-bottom: 1em;
+        }
+
+        .event-circle {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .contact-form {
+        
+        max-width: 500px;
+        flex-direction: column;
+      }
+      .contact-form input,
+      .contact-form textarea,
+      .contact-form button {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 1em;
+      }
+
+      .contact-form textarea {
+        height: 150px;
+      }
+
+      .profile-image {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .portfolio-item {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.5s ease-out;
+      }
+
+      .portfolio-item.show {
+        color: white;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .contact-form button {
+        background-color: #9ca7b3;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .contact-form button:hover {
+        background-color: #9ca7b3;
+        transform: scale(1.05);
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .about-section-container {
+        display: flex;
+        justify-content: center;
+        padding: 0 15px;
+      }
+
+      .about-section {
+        max-width: 1200px;
+        width: 100%;
+        padding: 2em;
+        text-align: center;
+      }
+
+      .timeline {
+        padding: 1em;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .timeline-event {
+        display: flex;
+        margin-bottom: 2em;
+        position: relative;
+        align-items: center;
+        margin: 1rem 0;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+      }
+
+      .event-circle {
+        width: 40px;
+        height: 40px;
+        background-color: #3498db;
+        border-radius: 50%;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1em;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .timeline-event:hover p {
+        font-size: 1rem;
+        transform: translateY(-5px);
+      }
+
+      .event-circle:hover {
+        background-color: #9ca7b3;
+        transform: scale(1.1);
+      }
+
+      .event-circle h3 {
+        color: white;
+        font-size: 1rem;
+      }
+
+      .timeline-event p {
+        font-weight: bold;
+
+        padding: 40px 25px;
+        background: rgba(84, 57, 57, 0.35);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9.3px);
+        -webkit-backdrop-filter: blur(9.3px);
+        border: 1px solid rgba(84, 57, 57, 0.25);
+        transition: transform 0.3s ease;
+      }
+
+      .event-circle h3,
+      .event-circle p {
+        margin: 0;
+        color: white;
+        text-align: center;
+      }
+
+      .timeline-event:hover {
+        transform: scale(1.1);
+      }
+
+      .timeline-event:hover .event-circle {
+        transform: scale(1.1);
+      }
+
+      .timeline-event:hover .event-circle h3 {
+        font-size: 1.2rem;
+      }
+    </style>
+  </head>
+  <header class="navbar">
+    <div class="navbar-logo"><img src="img/logo.png" ></div>
+    <nav class="navbar-nav">
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="#kontakt">Contact</a></li> 
+        <li><a href="login/demo/login.html">Login</a></li></ul>
+    </nav>
+    
+</header>
+<div class="sidebar">
+    <a href="https://www.instagram.com/ap.iman/?hl=de" class="icon" id="instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11.984 16.815c2.596 0 4.706-2.111 4.706-4.707 0-1.409-.623-2.674-1.606-3.538-.346-.303-.735-.556-1.158-.748-.593-.27-1.249-.421-1.941-.421s-1.349.151-1.941.421c-.424.194-.814.447-1.158.749-.985.864-1.608 2.129-1.608 3.538 0 2.595 2.112 4.706 4.706 4.706zm.016-8.184c1.921 0 3.479 1.557 3.479 3.478 0 1.921-1.558 3.479-3.479 3.479s-3.479-1.557-3.479-3.479c0-1.921 1.558-3.478 3.479-3.478zm5.223.369h6.777v10.278c0 2.608-2.114 4.722-4.722 4.722h-14.493c-2.608 0-4.785-2.114-4.785-4.722v-10.278h6.747c-.544.913-.872 1.969-.872 3.109 0 3.374 2.735 6.109 6.109 6.109s6.109-2.735 6.109-6.109c.001-1.14-.327-2.196-.87-3.109zm2.055-9h-12.278v5h-1v-5h-1v5h-1v-4.923c-.346.057-.682.143-1 .27v4.653h-1v-4.102c-1.202.857-2 2.246-2 3.824v3.278h7.473c1.167-1.282 2.798-2 4.511-2 1.722 0 3.351.725 4.511 2h7.505v-3.278c0-2.608-2.114-4.722-4.722-4.722zm2.722 5.265c0 .406-.333.735-.745.735h-2.511c-.411 0-.744-.329-.744-.735v-2.53c0-.406.333-.735.744-.735h2.511c.412 0 .745.329.745.735v2.53z"/></svg></a>
+    <a href="https://www.linkedin.com/in/iman-aparviz-3bbb20294" class="icon" id="linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg></a>
+    <a href="https://www.snapchat.com/add/iimann17?share_id=ZZcfNS7O4AE&locale=de-AT" class="icon" id="snapchat"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5.829 4.533c-.6 1.344-.363 3.752-.267 5.436-.648.359-1.48-.271-1.951-.271-.49 0-1.075.322-1.167.802-.066.346.089.85 1.201 1.289.43.17 1.453.37 1.69.928.333.784-1.71 4.403-4.918 4.931-.251.041-.43.265-.416.519.056.975 2.242 1.357 3.211 1.507.099.134.179.7.306 1.131.057.193.204.424.582.424.493 0 1.312-.38 2.738-.144 1.398.233 2.712 2.215 5.235 2.215 2.345 0 3.744-1.991 5.09-2.215.779-.129 1.448-.088 2.196.058.515.101.977.157 1.124-.349.129-.437.208-.992.305-1.123.96-.149 3.156-.53 3.211-1.505.014-.254-.165-.477-.416-.519-3.154-.52-5.259-4.128-4.918-4.931.236-.557 1.252-.755 1.69-.928.814-.321 1.222-.716 1.213-1.173-.011-.585-.715-.934-1.233-.934-.527 0-1.284.624-1.897.286.096-1.698.332-4.095-.267-5.438-1.135-2.543-3.66-3.829-6.184-3.829-2.508 0-5.014 1.268-6.158 3.833z" fill="#020202"/></svg></a>
+    <a href="mailto:imanaparviz@gmail.com" class="icon" id="email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg></a>
+    <a href="https://discord.com/channels/1074395760864542830" class="icon" id="discord"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M19.54 0c1.356 0 2.46 1.104 2.46 2.472v21.528l-2.58-2.28-1.452-1.344-1.536-1.428.636 2.22h-13.608c-1.356 0-2.46-1.104-2.46-2.472v-16.224c0-1.368 1.104-2.472 2.46-2.472h16.08zm-4.632 15.672c2.652-.084 3.672-1.824 3.672-1.824 0-3.864-1.728-6.996-1.728-6.996-1.728-1.296-3.372-1.26-3.372-1.26l-.168.192c2.04.624 2.988 1.524 2.988 1.524-1.248-.684-2.472-1.02-3.612-1.152-.864-.096-1.692-.072-2.424.024l-.204.024c-.42.036-1.44.192-2.724.756-.444.204-.708.348-.708.348s.996-.948 3.156-1.572l-.12-.144s-1.644-.036-3.372 1.26c0 0-1.728 3.132-1.728 6.996 0 0 1.008 1.74 3.66 1.824 0 0 .444-.54.804-.996-1.524-.456-2.1-1.416-2.1-1.416l.336.204.048.036.047.027.014.006.047.027c.3.168.6.3.876.408.492.192 1.08.384 1.764.516.9.168 1.956.228 3.108.012.564-.096 1.14-.264 1.74-.516.42-.156.888-.384 1.38-.708 0 0-.6.984-2.172 1.428.36.456.792.972.792.972zm-5.58-5.604c-.684 0-1.224.6-1.224 1.332 0 .732.552 1.332 1.224 1.332.684 0 1.224-.6 1.224-1.332.012-.732-.54-1.332-1.224-1.332zm4.38 0c-.684 0-1.224.6-1.224 1.332 0 .732.552 1.332 1.224 1.332.684 0 1.224-.6 1.224-1.332 0-.732-.54-1.332-1.224-1.332z"/></svg></a>
+</div>
+ 
+    <div id="bg-wrap"  >
+      <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient
+            id="Gradient1"
+            cx="50%"
+            cy="50%"
+            fx="0.441602%"
+            fy="50%"
+            r=".5"
+          >
+            <animate
+              attributeName="fx"
+              dur="34s"
+              values="0%;3%;0%"
+              repeatCount="indefinite"
+            ></animate>
+            <stop offset="0%" stop-color="rgba(255, 0, 255, 1)"></stop>
+            <stop offset="100%" stop-color="rgba(255, 0, 255, 0)"></stop>
+          </radialGradient>
+          <radialGradient
+            id="Gradient2"
+            cx="50%"
+            cy="50%"
+            fx="2.68147%"
+            fy="50%"
+            r=".5"
+          >
+            <animate
+              attributeName="fx"
+              dur="23.5s"
+              values="0%;3%;0%"
+              repeatCount="indefinite"
+            ></animate>
+            <stop offset="0%" stop-color="rgba(255, 255, 0, 1)"></stop>
+            <stop offset="100%" stop-color="rgba(255, 255, 0, 0)"></stop>
+          </radialGradient>
+          <radialGradient
+            id="Gradient3"
+            cx="50%"
+            cy="50%"
+            fx="0.836536%"
+            fy="50%"
+            r=".5"
+          >
+            <animate
+              attributeName="fx"
+              dur="21.5s"
+              values="0%;3%;0%"
+              repeatCount="indefinite"
+            ></animate>
+            <stop offset="0%" stop-color="rgba(0, 255, 255, 1)"></stop>
+            <stop offset="100%" stop-color="rgba(0, 255, 255, 0)"></stop>
+          </radialGradient>
+          <radialGradient
+            id="Gradient4"
+            cx="50%"
+            cy="50%"
+            fx="4.56417%"
+            fy="50%"
+            r=".5"
+          >
+            <animate
+              attributeName="fx"
+              dur="23s"
+              values="0%;5%;0%"
+              repeatCount="indefinite"
+            ></animate>
+            <stop offset="0%" stop-color="rgba(0, 255, 0, 1)"></stop>
+            <stop offset="100%" stop-color="rgba(0, 255, 0, 0)"></stop>
+          </radialGradient>
+          <radialGradient
+            id="Gradient5"
+            cx="50%"
+            cy="50%"
+            fx="2.65405%"
+            fy="50%"
+            r=".5"
+          >
+            <animate
+              attributeName="fx"
+              dur="24.5s"
+              values="0%;5%;0%"
+              repeatCount="indefinite"
+            ></animate>
+            <stop offset="0%" stop-color="rgba(0,0,255, 1)"></stop>
+            <stop offset="100%" stop-color="rgba(0,0,255, 0)"></stop>
+          </radialGradient>
+          <radialGradient
+            id="Gradient6"
+            cx="50%"
+            cy="50%"
+            fx="0.981338%"
+            fy="50%"
+            r=".5"
+          >
+            <animate
+              attributeName="fx"
+              dur="25.5s"
+              values="0%;5%;0%"
+              repeatCount="indefinite"
+            ></animate>
+            <stop offset="0%" stop-color="rgba(255,0,0, 1)"></stop>
+            <stop offset="100%" stop-color="rgba(255,0,0, 0)"></stop>
+          </radialGradient>
+        </defs>
+        <!--<rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient4)">
+            <animate attributeName="x" dur="20s" values="25%;0%;25%" repeatCount="indefinite" />
+            <animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite" />
+            <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="17s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient5)">
+            <animate attributeName="x" dur="23s" values="0%;-25%;0%" repeatCount="indefinite" />
+            <animate attributeName="y" dur="24s" values="25%;-25%;25%" repeatCount="indefinite" />
+            <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="18s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient6)">
+            <animate attributeName="x" dur="25s" values="-25%;0%;-25%" repeatCount="indefinite" />
+            <animate attributeName="y" dur="26s" values="0%;-25%;0%" repeatCount="indefinite" />
+            <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="19s" repeatCount="indefinite"/>
+            </rect>-->
+        <rect
+          x="13.744%"
+          y="1.18473%"
+          width="100%"
+          height="100%"
+          fill="url(#Gradient1)"
+          transform="rotate(334.41 50 50)"
+        >
+          <animate
+            attributeName="x"
+            dur="20s"
+            values="25%;0%;25%"
+            repeatCount="indefinite"
+          ></animate>
+          <animate
+            attributeName="y"
+            dur="21s"
+            values="0%;25%;0%"
+            repeatCount="indefinite"
+          ></animate>
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="0 50 50"
+            to="360 50 50"
+            dur="7s"
+            repeatCount="indefinite"
+          ></animateTransform>
+        </rect>
+        <rect
+          x="-2.17916%"
+          y="35.4267%"
+          width="100%"
+          height="100%"
+          fill="url(#Gradient2)"
+          transform="rotate(255.072 50 50)"
+        >
+          <animate
+            attributeName="x"
+            dur="23s"
+            values="-25%;0%;-25%"
+            repeatCount="indefinite"
+          ></animate>
+          <animate
+            attributeName="y"
+            dur="24s"
+            values="0%;50%;0%"
+            repeatCount="indefinite"
+          ></animate>
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="0 50 50"
+            to="360 50 50"
+            dur="12s"
+            repeatCount="indefinite"
+          ></animateTransform>
+        </rect>
+        <rect
+          x="9.00483%"
+          y="14.5733%"
+          width="100%"
+          height="100%"
+          fill="url(#Gradient3)"
+          transform="rotate(139.903 50 50)"
+        >
+          <animate
+            attributeName="x"
+            dur="25s"
+            values="0%;25%;0%"
+            repeatCount="indefinite"
+          ></animate>
+          <animate
+            attributeName="y"
+            dur="12s"
+            values="0%;25%;0%"
+            repeatCount="indefinite"
+          ></animate>
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="360 50 50"
+            to="0 50 50"
+            dur="9s"
+            repeatCount="indefinite"
+          ></animateTransform>
+        </rect>
+      </svg>
+    </div>
+    <header class="header">
+      <h1>Iman Aparviz</h1>
+  <!--     <p>Welcome to my About Me page.</p> -->
+    </header>
+
+    <main>
+      <section class="intro-section">
+        <img src="img/aparviz.jpg" alt="Ihr Bild" class="profile-image" />
+        <div class="intro-text">
+          <h2>Welcome!</h2>
+          <p>
+            Welcome to my website! I'm a passionate web developer with a strong
+            dedication to creating innovative and user-friendly websites.
+          </p>
+        </div>
+      </section>
+      <section class="about-section-container">
+        <div class="about-section">
+          <h2>My story</h2>
+          <div class="timeline">
+            <div class="timeline-event">
+              <div class="event-circle">
+                <h3>2024</h3>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam
+                repellat facilis, nam maxime dolorum unde reiciendis ad itaque
+                explicabo dolorem praesentium error iure? Aut rem eligendi
+                quibusdam quis dolorum laudantium. Mein Einstieg in die
+                Designwelt. Lorem ipsum dolor sit amet...
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="contact-and-spline-container">
+        <section id="kontakt" class="contact-section">
+          <div class="contact-container">
+            <h2>Contact Us</h2>
+            <p>How to reach me...</p>
+            <form class="contact-form">
+              <input type="text" placeholder="Name" required />
+              <input type="email" placeholder="E-Mail" required />
+              <textarea placeholder="Ihre Nachricht" required></textarea>
+              <button type="submit">Senden</button>
+            </form>
+          </div>
+        </section>
+        <div class="spline-container">
+          <iframe
+            src="https://my.spline.design/characteruicollection001-a94d61511adc5d243791a8b75f87a55f/"
+            frameborder="0"
+            width="100%"
+            height="100%"
+          ></iframe>
+        </div>
+      </div>
+      <section class="portfolio-section">
+        <h2>My Portfolio</h2>
+        <div class="portfolio-filter">
+          <button onclick="filterPortfolio('all')">All</button>
+          <button onclick="filterPortfolio('webdesign')">Webdesigne</button>
+          <button onclick="filterPortfolio('grafikdesign')">Design</button>
+          <!-- Weitere Filterbuttons -->
+        </div>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">Projekt 1</div>
+          <div class="portfolio-item">Projekt 2</div>
+          <!-- Weitere Projekte -->
+        </div>
+      </section>
+
+      <section class="blog-section">
+        <h2>News & Blog</h2>
+        <p>The latest updates on my projects and thoughts.</p>
+        <!-- Blog-Inhalte hinzufügen -->
+      </section>
+    </main>
+
+    <footer class="footer">
+      <br />
+      <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+      <br />
+    </footer>
+
+    <script>
+      // Ihr JavaScript für Smooth Scrolling
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Ihr JavaScript für den Portfolio-Filter
+      function filterPortfolio(category) {
+        var items = document.querySelectorAll(".portfolio-item");
+        items.forEach(function (item) {
+          if (category === "all" || item.classList.contains(category)) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      }
+      const cursor = document.querySelector(".cursor");
+      document.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.pageX + "px";
+        cursor.style.top = e.pageY + "px";
+      });
+      document.querySelectorAll(".timeline-event").forEach((event) => {
+        event.addEventListener("mousemove", (e) => {
+          const circle = event.querySelector(".event-circle");
+          const rect = circle.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          circle.style.transformOrigin = `${x}px ${y}px`;
+        });
+
+        event.addEventListener("mouseleave", () => {
+          const circle = event.querySelector(".event-circle");
+          circle.style.transformOrigin = "center center";
+        });
+      });
+      function zoomText(element) {
+        element.style.transform = "scale(1.1)";
+      }
+
+      function unzoomText(element) {
+        element.style.transform = "scale(1)";
+      }
+      document.querySelectorAll("section").forEach((section) => {
+        section.addEventListener("mouseenter", () => {
+          const h3 = section.querySelector("h3");
+          const p = section.querySelector("p");
+          if (h3) {
+            zoomText(h3);
+          }
+          if (p) {
+            zoomText(p);
+          }
+        });
+        // JavaScript-Animationen
+        function revealPortfolioItems() {
+          var items = document.querySelectorAll(".portfolio-item");
+          for (var i = 0; i < items.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = items[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+
+            if (elementTop < windowHeight - elementVisible) {
+              items[i].classList.add("show");
+            }
+          }
+        }
+
+        window.addEventListener("scroll", revealPortfolioItems);
+
+        section.addEventListener("mouseleave", () => {
+          const h3 = section.querySelector("h3");
+          const p = section.querySelector("p");
+          if (h3) {
+            unzoomText(h3);
+          }
+          if (p) {
+            unzoomText(p);
+          }
+        });
+      });
+      // Ihr JavaScript für die Scroll-Animationen
+      window.addEventListener("scroll", revealElements);
+      document.querySelector('.navbar-toggle').addEventListener('click', function() {
+    document.querySelector('.navbar-nav ul').classList.toggle('active');
+});
+
+      function revealElements() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 150;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          } else {
+            reveals[i].classList.remove("active");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Portfolio</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+	<link rel="icon" href="img/logo.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="./img/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+   -->
+  </head>
+  <body>
+	<header class="navbar">
+        <div class="navbar-logo"><img src="img/logo.png" ></div>
+        <nav class="navbar-nav">
+            <ul>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">Contact</a></li>
+			<li><a href="login/demo/login.html">Login</a></li> </ul>
+        </nav>
+        <div class="navbar-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+	<div class="sidebar">
+		<a href="https://www.instagram.com/ap.iman/?hl=de" class="icon" id="instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11.984 16.815c2.596 0 4.706-2.111 4.706-4.707 0-1.409-.623-2.674-1.606-3.538-.346-.303-.735-.556-1.158-.748-.593-.27-1.249-.421-1.941-.421s-1.349.151-1.941.421c-.424.194-.814.447-1.158.749-.985.864-1.608 2.129-1.608 3.538 0 2.595 2.112 4.706 4.706 4.706zm.016-8.184c1.921 0 3.479 1.557 3.479 3.478 0 1.921-1.558 3.479-3.479 3.479s-3.479-1.557-3.479-3.479c0-1.921 1.558-3.478 3.479-3.478zm5.223.369h6.777v10.278c0 2.608-2.114 4.722-4.722 4.722h-14.493c-2.608 0-4.785-2.114-4.785-4.722v-10.278h6.747c-.544.913-.872 1.969-.872 3.109 0 3.374 2.735 6.109 6.109 6.109s6.109-2.735 6.109-6.109c.001-1.14-.327-2.196-.87-3.109zm2.055-9h-12.278v5h-1v-5h-1v5h-1v-4.923c-.346.057-.682.143-1 .27v4.653h-1v-4.102c-1.202.857-2 2.246-2 3.824v3.278h7.473c1.167-1.282 2.798-2 4.511-2 1.722 0 3.351.725 4.511 2h7.505v-3.278c0-2.608-2.114-4.722-4.722-4.722zm2.722 5.265c0 .406-.333.735-.745.735h-2.511c-.411 0-.744-.329-.744-.735v-2.53c0-.406.333-.735.744-.735h2.511c.412 0 .745.329.745.735v2.53z"/></svg></a>
+		<a href="https://www.linkedin.com/in/iman-aparviz-3bbb20294" class="icon" id="linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg></a>
+		<a href="https://www.snapchat.com/add/iimann17?share_id=ZZcfNS7O4AE&locale=de-AT" class="icon" id="snapchat"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5.829 4.533c-.6 1.344-.363 3.752-.267 5.436-.648.359-1.48-.271-1.951-.271-.49 0-1.075.322-1.167.802-.066.346.089.85 1.201 1.289.43.17 1.453.37 1.69.928.333.784-1.71 4.403-4.918 4.931-.251.041-.43.265-.416.519.056.975 2.242 1.357 3.211 1.507.099.134.179.7.306 1.131.057.193.204.424.582.424.493 0 1.312-.38 2.738-.144 1.398.233 2.712 2.215 5.235 2.215 2.345 0 3.744-1.991 5.09-2.215.779-.129 1.448-.088 2.196.058.515.101.977.157 1.124-.349.129-.437.208-.992.305-1.123.96-.149 3.156-.53 3.211-1.505.014-.254-.165-.477-.416-.519-3.154-.52-5.259-4.128-4.918-4.931.236-.557 1.252-.755 1.69-.928.814-.321 1.222-.716 1.213-1.173-.011-.585-.715-.934-1.233-.934-.527 0-1.284.624-1.897.286.096-1.698.332-4.095-.267-5.438-1.135-2.543-3.66-3.829-6.184-3.829-2.508 0-5.014 1.268-6.158 3.833z" fill="#020202"/></svg></a>
+		<a href="mailto:imanaparviz@gmail.com" class="icon" id="email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg></a>
+		<a href="https://discord.com/channels/1074395760864542830" class="icon" id="discord"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M19.54 0c1.356 0 2.46 1.104 2.46 2.472v21.528l-2.58-2.28-1.452-1.344-1.536-1.428.636 2.22h-13.608c-1.356 0-2.46-1.104-2.46-2.472v-16.224c0-1.368 1.104-2.472 2.46-2.472h16.08zm-4.632 15.672c2.652-.084 3.672-1.824 3.672-1.824 0-3.864-1.728-6.996-1.728-6.996-1.728-1.296-3.372-1.26-3.372-1.26l-.168.192c2.04.624 2.988 1.524 2.988 1.524-1.248-.684-2.472-1.02-3.612-1.152-.864-.096-1.692-.072-2.424.024l-.204.024c-.42.036-1.44.192-2.724.756-.444.204-.708.348-.708.348s.996-.948 3.156-1.572l-.12-.144s-1.644-.036-3.372 1.26c0 0-1.728 3.132-1.728 6.996 0 0 1.008 1.74 3.66 1.824 0 0 .444-.54.804-.996-1.524-.456-2.1-1.416-2.1-1.416l.336.204.048.036.047.027.014.006.047.027c.3.168.6.3.876.408.492.192 1.08.384 1.764.516.9.168 1.956.228 3.108.012.564-.096 1.14-.264 1.74-.516.42-.156.888-.384 1.38-.708 0 0-.6.984-2.172 1.428.36.456.792.972.792.972zm-5.58-5.604c-.684 0-1.224.6-1.224 1.332 0 .732.552 1.332 1.224 1.332.684 0 1.224-.6 1.224-1.332.012-.732-.54-1.332-1.224-1.332zm4.38 0c-.684 0-1.224.6-1.224 1.332 0 .732.552 1.332 1.224 1.332.684 0 1.224-.6 1.224-1.332 0-.732-.54-1.332-1.224-1.332z"/></svg></a>
+	</div>
+	
+	<div class="main-content">
+    <section id="section" class="light nopad-t nopad-b">
+
+			<div class="row">
+
+				<div class="col-12">
+					
+					<div id="face" class="face">
+
+						<a href="portfolio.html">
+							<div id="designer" class="designer">
+								<div id="designer-desc" class="description">
+									<h1>designer</h1>
+									
+									<p>Product designer specialising in UI design and design systems.</p>
+								</div>
+							</div>
+						</a>
+
+						<a href="about.html">
+							<div id="coder" class="coder">
+								<div id="coder-desc" class="description">
+									<!-- <h1><span class="chevron-left">&lt;</span>coder<span class="chevron-right">&gt;</span></h1>
+									<p>Front end developer who writes clean, elegant and efficient code.</p>
+								 --></div>
+							</div>
+						</a>
+						<div class="features-container">
+						<div class="designer-label">Designer</div>
+						<div class="designer-label-P">Product designer specialising in UI design and design systems.</div>
+						<img id="face-img1" class="face-img1" src="img/imanImage.png" alt="imanImage">
+						<div class="coder-label">&lt;Coder&gt;</div>
+						<div class="coder-label-P">Front end developer who writes clean, elegant and efficient code.s</div>
+						<div id="designer-img" class="designer-img"></div>
+						<div id="coder-img" class="coder-img"></div>
+						<div id="designer-bg" class="designer-bg"></div>
+						<div id="coder-bg" class="coder-bg"></div>
+
+					</div>
+
+				</div>
+			</div>
+			<div class="content-wrapper">
+				<div class="gray-background"></div>
+				<div class="creative-card-grid">
+					<div class="card-item">
+							<a href="https://stickwithme.se/collections/page" target="_blank">
+					<div class="card-image">
+								<img src="img/sticky.PNG" alt="Einzigartiges Merkmal 1">
+					</div>
+					<div class="card-content">
+							<h3><b>My First Websit</b></h3>
+							<p>Swedish Customer Sticker Shop.</p>
+					</div> </a>
+					</div>	
+					<div class="card-item">
+							<a href="img/nextJs-1.PNG" target="_blank">
+								<div class="card-image">
+							<img src="img/nextJs-1.PNG" alt="Einzigartiges Merkmal 2">
+					</div>
+					<div class="card-content">
+							<h3><b>Spline-3d Website </b></h3>
+							<p>Initial Figma design page.</p>
+					</div></a>
+					</div>
+					<div class="card-item">
+						<a href="img/iman.jpg" target="_blank">
+					<div class="card-image">
+							<img src="img/iman.jpg" alt="Einzigartiges Merkmal 3">
+					</div>
+					<div class="card-content">
+							<h3><b>Next.js Feature Website</b></h3>
+							<p>Travel, Mountains, and Next.js.</p>
+					</div></a>
+					</div>
+					<div class="card-item">
+						<a href="img/Car.png" target="_blank">
+							<div class="card-image">
+							<img src="img/Car.png" alt="">						
+					</div>
+					<div class="card-content">
+							<h3><b>a Framer Motion</b></h3>
+							<p>About ships and water.</p>
+					</div></a>
+					</div>
+				</div>
+			</div>
+</div>
+				
+</section>			
+</div>
+
+<footer class="site-footer">
+					<div class="footer-container">
+						<nav class="footer-nav">
+							<ul>
+								<li><a href="E-inedx.html">Home</a></li>
+								<li><a href="portfolio.html">Portfolio</a></li>
+								<li><a href="contact.html">Contact</a></li>
+							</ul>
+						</nav>
+						<div class="footer-credits">
+							<p>&copy; 2024 My Portfolio. All rights reserved.</p>
+						</div>
+					</div>
+				</footer>
+	<script src="jquery.min.js">
+		
+	</script>
+	<script src="clipboard.min.js"></script>
+    <script src="script.js"></script>
+	<script type="text/javascript">
+		<!--
+		
+		//If browser is IE8 or older we show IE specific page
+		if(ie < 9){
+			ieMessage();
+		}
+		
+		/*
+		* Call functions when dom is ready
+		*/
+		$(document).ready(function() {
+		
+			// Hide browser top bar in mobiles
+			$('body').scrollTop(1);
+		
+			// Toggle Navigation for mobile devices
+			$('.icon-nav').on('click', function(){
+				$('header nav').slideToggle();
+				$(this).toggleClass('active');
+			});
+		
+			// Function to scroll to top
+			$('a[href=#top]').click(function(){
+		
+				$('html, body').animate({scrollTop:0}, 1000, 'easeInOutQuad');
+				return false;
+			});
+		
+			// Function to fade in image sprites
+			  $('.sprite').fadeSprite();
+		
+			//Function for thumbnail hover effect
+			$('.thumbs li').hoverThumb();
+		
+			// Function to animate when leaving page
+			$('.transition, #nav .page_item a, #nav-footer a, #thumbs a, #next a, #prev a, #logo, #face a').leavePage();	
+		
+			// Animate the header on first			
+			$('#header').stop().animate({'opacity': '1', 'top':'0'}, 1000);
+		
+		
+			// Copy email address to clipboard	
+			var clipboard = new ClipboardJS('#email');
+		
+			clipboard.on('success', function(e) {
+				$('#email-tooltip').attr("tooltip", "Yay! My email address has been copied to your clipboard ✅");
+				$('#email-tooltip').addClass('success');
+		
+				// Reset
+				$('#email-tooltip').mouseleave(function() {
+		
+					setTimeout( function(){
+						$('#email-tooltip').attr("tooltip", "Click to copy my email address to your clipboard 😀");
+						$('#email-tooltip').removeClass('success');
+					}, 300);
+				});
+		
+				e.clearSelection();
+			});
+		
+			clipboard.on('error', function(e) {
+				$('#email-tooltip').attr("tooltip", "Sorry, there was a technical glitch. Please try again.");
+				$('#email-tooltip').toggleClass('fail');
+			});
+		
+		
+			// Preload the page with jPreLoader
+			$('body').jpreLoader({
+		
+				showSplash: true
+		
+			}, function() {	
+		
+				//Show the page once images are loaded	
+						
+					$('#face').animateHome();
+					$('#face').resizeFace();
+		
+					
+			});
+		
+		});
+
+		document.addEventListener('mousemove', function(e) {
+  // Breite des Fensters ermitteln
+  var windowWidth = window.innerWidth;
+  // Position der Maus ermitteln
+  var mouseX = e.clientX;
+
+  // Elemente auswählen
+  var designerLabelP = document.querySelector('.designer-label-P');
+  var coderLabel = document.querySelector('.coder-label-P');
+
+  // Überprüfen Sie, ob die Maus sich auf der rechten Seite der Mitte befindet
+  if (mouseX > windowWidth / 2) {
+    designerLabelP.classList.add('faded');
+  } else {
+    designerLabelP.classList.remove('faded');
+  }
+
+  // Überprüfen Sie, ob die Maus sich auf der linken Seite der Mitte befindet
+  if (mouseX < windowWidth / 2) {
+    coderLabel.classList.add('faded');
+  } else {
+    coderLabel.classList.remove('faded');
+  }
+});
+		document.addEventListener('mousemove', function(e) {
+        const screenWidth = window.innerWidth;
+        const mouseX = e.clientX; // X-Position der Maus
+
+        const designerLabel = document.querySelector('.designer-label');
+        const coderLabel = document.querySelector('.coder-label');
+
+        if (mouseX > screenWidth / 2) {
+            // Maus ist auf der rechten Seite
+            designerLabel.style.opacity = 0; // Designer verblassen
+            coderLabel.style.opacity = 1; // Coder sichtbar
+        } else {
+            // Maus ist auf der linken Seite
+            designerLabel.style.opacity = 1; // Designer sichtbar
+            coderLabel.style.opacity = 0; // Coder verblassen
+        }
+    });
+		</script>
+
+    
+  </body>
+</html>
